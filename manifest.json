@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "MaterialSjoe",
+  "version": "3.4",
+  "description": "MaterialSjoe New Tab dashboard with smooth drag-to-resize widgets, snap-to-grid guides, custom app shortcuts, and cross-tab Gmail & WhatsApp notifications.",
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "alarms",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://web.whatsapp.com/*",
+    "https://keep.google.com/*",
+    "https://api.open-meteo.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["whatsapp_listener.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  }
+}

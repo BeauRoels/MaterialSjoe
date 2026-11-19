@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaterialSjoe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="sage" data-mode="dark">
+
+  <!-- Main 3-column bento grid that holds all customizable widgets -->
+  <main id="widget-grid" class="container">
+
+    <!-- Clock Widget: displays live time and date -->
+    <section class="grid-widget span-1" data-widget-id="clock" data-span="1" draggable="false">
+      <div class="widget-toolbar">
+        <div class="drag-handle" title="Drag to move">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span>Clock</span>
+        </div>
+        <div class="widget-controls">
+          <button class="remove-widget-btn" title="Hide Widget">✕</button>
+        </div>
+      </div>
+      <div class="clock-widget">
+        <div id="time">--:--</div>
+        <div id="date">Loading...</div>
+      </div>
+      <div class="resize-handle-e" title="Drag to resize">↔</div>
+    </section>
+
+    <!-- Weather Widget: live Aalst forecast styled in Material You -->
+    <section class="grid-widget span-1" data-widget-id="weather" data-span="1" draggable="false">
+      <div class="widget-toolbar">
+        <div class="drag-handle" title="Drag to move">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span>Weather</span>
+        </div>
+        <div class="widget-controls">
+          <button class="remove-widget-btn" title="Hide Widget">✕</button>
+        </div>
+      </div>
+      <a href="https://www.google.com/search?q=weather+Aalst" class="m3-card weather-widget" title="Open Google Weather">
+        <div class="weather-top">
+          <div class="weather-location">
+            <span class="weather-city">Aalst</span>
+            <span id="weather-condition" class="weather-desc">Loading...</span>
+          </div>
+          <div id="weather-icon" class="weather-emoji">⛅</div>
+        </div>
+        <div class="weather-bottom">
+          <div id="weather-temp" class="weather-temp">--°</div>
+          <div class="weather-meta">
+            <span id="weather-hilo">H:--° L:--°</span>
+            <span id="weather-wind">Wind -- km/h</span>
+          </div>
+        </div>
+      </a>
+      <div class="resize-handle-e" title="Drag to resize">↔</div>
+    </section>
+
+    <!-- Google Calendar Widget -->
+    <section class="grid-widget span-2" data-widget-id="calendar" data-span="2" draggable="false">
+      <div class="widget-toolbar">
+        <div class="drag-handle" title="Drag to move">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span>Calendar</span>
+        </div>
+        <div class="widget-controls">
+          <button class="remove-widget-btn" title="Hide Widget">✕</button>
+        </div>
+      </div>
+      <div class="m3-card calendar-widget">
+        <div class="card-header">
+          <div class="card-title-group">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+            </svg>
+            <span>Google Calendar</span>
+          </div>
+          <a href="https://calendar.google.com/calendar/u/0/r?tab=oc" class="icon-btn" title="Open Calendar">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+        <div class="calendar-frame-wrapper">
+          <iframe id="gcal-iframe" src="" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+      <div class="resize-handle-e" title="Drag to resize">↔</div>
+    </section>
+
+    <!-- Google Keep Notes Widget -->
+    <section class="grid-widget span-2" data-widget-id="keep" data-span="2" draggable="false">
+      <div class="widget-toolbar">
+        <div class="drag-handle" title="Drag to move">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span>Google Keep</span>
+        </div>
+        <div class="widget-controls">
+          <button class="remove-widget-btn" title="Hide Widget">✕</button>
+        </div>
+      </div>
+      <div class="m3-card keep-widget">
+        <div class="card-header">
+          <div class="card-title-group">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h10v2H7zm0-4h10v2H7zm0 8h7v2H7z"/>
+            </svg>
+            <span>Google Keep Notes</span>
+          </div>
+          <a href="https://keep.google.com/" class="icon-btn" title="Open Keep">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+        <div class="calendar-frame-wrapper">
+          <iframe src="https://keep.google.com/u/0/" frameborder="0"></iframe>
+        </div>
+      </div>
+      <div class="resize-handle-e" title="Drag to resize">↔</div>
+    </section>
+
+    <!-- Search Bar Widget -->
+    <section class="grid-widget span-3" data-widget-id="search" data-span="3" draggable="false">
+      <div class="widget-toolbar">
+        <div class="drag-handle" title="Drag to move">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span>Search Bar</span>
+        </div>
+        <div class="widget-controls">
+          <button class="remove-widget-btn" title="Hide Widget">✕</button>
+        </div>
+      </div>
+      <form action="https://www.google.com/search" method="GET" class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" width="22" height="22">
+          <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <input type="text" name="q" placeholder="Search Google or type a URL" autocomplete="off" autofocus>
+      </form>
+      <div class="resize-handle-e" title="Drag to resize">↔</div>
+    </section>
+
+    <!-- Android-style App Shortcuts Grid -->
+    <section class="grid-widget span-3" data-widget-id="apps" data-span="3" draggable="false">
+      <div class="widget-toolbar">
+        <div class="drag-handle" title="Drag to move">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span>App Shortcuts</span>
+        </div>
+        <div class="widget-controls">
+          <button class="remove-widget-btn" title="Hide Widget">✕</button>
+        </div>
+      </div>
+      <div id="app-grid" class="app-grid"></div>
+      <div class="resize-handle-e" title="Drag to resize">↔</div>
+    </section>
+
+  </main>
+
+  <!-- Floating action button to toggle layout/app/theme customization mode -->
+  <button id="toggle-customize-btn" class="m3-fab">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/></svg>
+    <span id="fab-label">Customize</span>
+  </button>
+
+  <!-- Bottom customization dock -->
+  <aside id="customize-drawer" class="m3-drawer hidden">
+    <div class="drawer-section">
+      <span class="drawer-title">Manage Widgets</span>
+      <div id="widget-toggle-chips" class="swatch-group"></div>
+    </div>
+
+    <div class="drawer-section">
+      <span class="drawer-title">Accent Palette</span>
+      <div class="swatch-group">
+        <button class="color-swatch" data-set-theme="sage" style="background:#8CD4A8" title="Sage"></button>
+        <button class="color-swatch" data-set-theme="blue" style="background:#A8C7FA" title="Blue"></button>
+        <button class="color-swatch" data-set-theme="lavender" style="background:#D0BCFF" title="Lavender"></button>
+        <button class="color-swatch" data-set-theme="peach" style="background:#FFB784" title="Peach"></button>
+        <button class="color-swatch" data-set-theme="mono" style="background:#D4D4D4" title="Mono"></button>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <span class="drawer-title">Surface Mode</span>
+      <div class="mode-toggle">
+        <button id="mode-dark-btn" class="m3-chip active">Dark</button>
+        <button id="mode-light-btn" class="m3-chip">Light</button>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <span class="drawer-title">Apps & Layout</span>
+      <div class="drawer-actions">
+        <button id="add-app-btn" type="button" class="m3-tonal-btn">+ Add App</button>
+        <button id="reset-all-btn" type="button" class="m3-outlined-btn">Reset Defaults</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal dialog for adding, editing, or deleting app shortcuts -->
+  <div id="app-modal-backdrop" class="m3-modal-backdrop hidden">
+    <div class="m3-modal">
+      <h2 id="modal-title">Edit Shortcut</h2>
+
+      <label class="m3-field">
+        <span>App Name</span>
+        <input type="text" id="edit-app-name" placeholder="e.g. YouTube">
+      </label>
+
+      <label class="m3-field">
+        <span>Destination URL</span>
+        <input type="text" id="edit-app-url" placeholder="https://...">
+      </label>
+
+      <label class="m3-field">
+        <span>Custom Icon Domain (or Full Image URL)</span>
+        <input type="text" id="edit-app-icon" placeholder="e.g. youtube.com">
+      </label>
+
+      <div class="modal-footer">
+        <button id="delete-app-btn" type="button" class="m3-danger-btn">Delete</button>
+        <div class="modal-right-btns">
+          <button id="cancel-modal-btn" type="button" class="m3-text-btn">Cancel</button>
+          <button id="save-app-btn" type="button" class="m3-filled-btn">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
